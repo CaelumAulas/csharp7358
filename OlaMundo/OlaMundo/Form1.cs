@@ -47,5 +47,45 @@ namespace OlaMundo
 
             MessageBox.Show("Numero: " + numero);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int idade = 19;
+
+            if(idade > 18)
+            {
+                MessageBox.Show("Você pode entrar na balada");
+            }
+            else
+            {
+                MessageBox.Show("Você nao pode");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // repetição; laços
+            // while, for
+
+            for(int numero = 1; numero <= 100; numero++)
+            {
+                MessageBox.Show("numero: " + numero);
+            }
+
+            int idade = 14;
+
+            // while
+
+            while(idade < 18)
+            {
+                MessageBox.Show("Nao pode");
+                idade++;
+            }
+
+            for( ; idade < 18; idade++)
+            {
+                MessageBox.Show("Nao pode");
+            }
+        }
     }
 }
