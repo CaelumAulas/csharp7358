@@ -87,5 +87,38 @@ namespace OlaMundo
                 MessageBox.Show("Nao pode");
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int total = 0;
+            for(int i = 1; i <= 1000; i++)
+            {
+                total = i + total;
+            }
+            MessageBox.Show("Soma de 1 a 1000: " + total);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            for(int n = 1;  n <= 100; n++)
+            {
+                if(n % 3 == 0 || n % 4 == 0)
+                {
+                    MessageBox.Show("Multiplo: " + n);
+                }
+
+
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int fatorial = 1;
+            for(int i = 1; i <= 10; i++)
+            {
+                fatorial = fatorial * i; 
+                MessageBox.Show("Fatorial: " + fatorial);
+            }
+        }
     }
 }
