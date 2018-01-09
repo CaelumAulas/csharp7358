@@ -127,13 +127,32 @@ namespace OlaMundo
             contaJoao.titular = "Joao";
             contaJoao.saldo = 1000;
             contaJoao.numero = 123;
-
+            contaJoao.Saque(400);
+            contaJoao.Deposito(100);
+            
             Conta contaAna = new Conta();
             contaAna.titular = "Ana";
             contaAna.saldo = 2000;
             contaAna.numero = 234;
 
+            bool sacou = contaAna.Saque(500);
+
+            if(sacou)
+            {
+                MessageBox.Show("Deu certo!");
+            }
+            else
+            {
+                MessageBox.Show("Nao deu certo!");
+            }
+
             MessageBox.Show("Titular: " + contaAna.titular);
+
+            double valor = 400;
+            contaJoao.Saque(valor);
+            contaAna.Deposito(valor);
+
+            contaJoao.Transfere(valor, contaAna);
         }
     }
 }
