@@ -34,7 +34,7 @@ namespace Funcionarios
                 MessageBox.Show("Autenticado!");
             }
 
-            Funcionario ana = new Caixa();
+            Caixa ana = new Caixa();
             ana.Nome = "Ana";
             ana.Salario = 1500;
             ana.Ramal = "789798-9";
