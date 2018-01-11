@@ -91,5 +91,32 @@ namespace Banco
             FormCadastroContas formCadastro = new FormCadastroContas(this);
             formCadastro.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cliente joao = new Cliente("Joao");
+            ContaCorrente contaJoao = new ContaCorrente();
+            contaJoao.Numero = 345;
+            contaJoao.Titular = joao;
+            contaJoao.Deposita(150);
+            // contaJoao.Saca(300);
+
+            Cliente maria = new Cliente("Maria");
+            ContaCorrente contaMaria = new ContaCorrente();
+            contaMaria.Numero = 567;
+            contaMaria.Titular = maria;
+            contaMaria.Deposita(200);
+
+            SeguroDeVida seguroDoMario = new SeguroDeVida();
+            seguroDoMario.Titular = "Mario";
+            seguroDoMario.Valor = 1000;
+
+            TotalizadorDeTributos tributos = new TotalizadorDeTributos();
+            tributos.Adiciona(contaJoao);
+            tributos.Adiciona(contaMaria);
+            tributos.Adiciona(seguroDoMario);
+
+            MessageBox.Show("Total de tributos: " + tributos.Totalizador);
+        }
     }
 }
