@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Banco
 {
-    public class ContaPoupanca : Conta
+    public interface ITributavel
     {
-        public override void Saca(double valor)
-        {
-            Saldo = Saldo - (valor + 0.1);
-        }
+        double CalculaTributo();
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{285CD4E6-1499-4866-BE45-F2E996E74655}</ProjectGuid>
+    <ProjectGuid>{B501FA13-A991-4DD2-ABD9-C0F641671F17}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Banco</RootNamespace>
-    <AssemblyName>Banco</AssemblyName>
+    <RootNamespace>Arquivos</RootNamespace>
+    <AssemblyName>Arquivos</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,34 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Contas\Conta.cs" />
-    <Compile Include="Contas\ContaCorrente.cs" />
-    <Compile Include="Contas\ContaInvestimento.cs" />
-    <Compile Include="Contas\ContaPoupanca.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroContas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCadastroContas.Designer.cs">
-      <DependentUpon>FormCadastroContas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ITributavel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SaldoInsuficienteException.cs" />
-    <Compile Include="SeguroDeVida.cs" />
-    <Compile Include="TotalizadorDeTributos.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroContas.resx">
-      <DependentUpon>FormCadastroContas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,6 +78,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

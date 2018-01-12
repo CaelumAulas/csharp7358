@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Banco
+namespace Banco.Contas
 {
     public abstract class Conta
     {        

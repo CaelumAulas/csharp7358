@@ -13,8 +13,7 @@ namespace Banco
 {
     public partial class Form1 : Form
     {
-        private Conta[] contas;
-        private int numeroDeContas;
+        private List<Conta> contas;
 
         public Form1()
         {
@@ -23,8 +22,7 @@ namespace Banco
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            contas = new Conta[10];
-            
+            contas = new List<Conta>();
 
             Cliente joao = new Cliente("Joao");
             ContaCorrente contaJoao = new ContaCorrente();
@@ -47,9 +45,8 @@ namespace Banco
 
         public void AdicionaConta(Conta novaConta)
         {
-            contas[numeroDeContas] = novaConta;
-            numeroDeContas++;
-            comboContas.Items.Add("titular: " + novaConta.Titular.Nome);
+            contas.Add(novaConta);
+            comboContas.Items.Add(novaConta);
         }
 
         private void botaoDeposito_Click(object sender, EventArgs e)
@@ -107,6 +104,53 @@ namespace Banco
         {
             FormCadastroContas formCadastro = new FormCadastroContas(this);
             formCadastro.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cliente joao1 = new Cliente("Joao");
+            Conta contaJoao1 = new ContaCorrente();
+            contaJoao1.Numero = 123;
+            contaJoao1.Deposita(100);
+
+            Cliente joao2 = new Cliente("Joao");
+            Conta contaJoao2 = new ContaPoupanca();
+            contaJoao2.Numero = 123;
+            contaJoao2.Deposita(100);
+
+            if(contaJoao1.Equals(contaJoao2))
+            {
+                MessageBox.Show("Iguais");
+            }
+            else
+            {
+                MessageBox.Show("Diferentes");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Cliente lucas = new Cliente("Lucas");
+            Conta c1 = new ContaCorrente();
+            c1.Titular = lucas;
+            c1.Numero = 123;
+
+            Conta c2 = new ContaCorrente();
+            c2.Numero = 145;
+
+            Cliente joao = new Cliente("Joao");
+            Conta c3 = new ContaCorrente();
+            c3.Titular = joao;
+            c3.Numero = 123;
+
+            List<Conta> contas = new List<Conta>();
+            contas.Add(c1);
+            contas.Add(c2);
+            
+            MessageBox.Show("Tamanho: " + contas.Count);
+            contas.Remove(c3);
+            MessageBox.Show("Tamanho: " + contas.Count);
+
         }
     }
 }
